@@ -1,0 +1,51 @@
+body {
+  perspective: 400
+  perspective: 400px
+}
+
+#cube {
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+  --sideW: 200px;
+
+  width: var(--sideW);
+  height: var(--sideW);
+  margin: auto;
+  position: relative;
+  top: -calc(var(--sideW) / 2);
+  margin-top: 50vh;
+  background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 44%,#398235 100%);
+  transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  transform-style: preserve-3d;
+}
+
+.wall {
+  width: var(--sideW);
+  height: var(--sideW);
+  position: absolute;
+  opacity: 0.5;
+  top: 50%;
+  left: 50%;
+  margin: -calc(var(--sideW) / 2) 0 0 -calc(var(--sideW) / 2);
+}
+
+
+.wall.top {
+  transform: rotateX(-90deg) translateY(calc(var(--sideW) / -2)) translateZ(calc(var(--sideW) / 2));
+  background-color: red;
+}
+
+.wall.bottom {
+  transform: rotateX(-90deg) translateY(calc(var(--sideW) / 2)) translateZ(calc(var(--sideW) / -2));
+  background-color: ForestGreen;
+}
+
+.wall.left {
+  transform: rotateY(90deg) translateX(calc(var(--sideW) / -2)) translateZ(calc(var(--sideW) / 2));
+  background-color: IndianRed;
+}
+
+.wall.right {
+  transform: rotateY(-90deg) translateX(calc(var(--sideW) / 2)) translateZ(calc(var(--sideW) / -2));
+  background-color: LightSeaGreen;
+}
